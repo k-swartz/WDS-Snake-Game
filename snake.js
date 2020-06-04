@@ -1,14 +1,12 @@
-export const SnakeSpeed = .34;
-const SnakeBody = [{
-    X: 13,
-    Y: 12
-}];
-export const GridSize = 21;
-
+import { GridSize } from "./settings.js";
 
 import {
     GetInputDirection
 } from "./input.js";
+
+import { GetRandomGridPosition } from "./grid.js";
+
+const SnakeBody = [GetRandomGridPosition()];
 
 export const Update = () => {
     const InputDirection = GetInputDirection();

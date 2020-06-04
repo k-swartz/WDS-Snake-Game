@@ -12,17 +12,33 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       margin: 0;
       background-color: dimgrey;
     }
 
     #GameBoard {
       background-color: lightyellow;
-      width: 100vmin;
-      height: 100vmin;
+      width: 90vmin;
+      height: 90vmin;
       display: grid;
       grid-template-rows: repeat(21, 1fr);
       grid-template-columns: repeat(21, 1fr);
+    }
+    
+    #Settings {
+      background-color: rgba(150, 150, 170, .8);
+      width: 90vmin;
+      height: 5vmin;
+      display: flex;
+      color: white;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #Settings > * {
+      margin-left: .6vmin;
+      margin-right: .6vmin;
     }
 
     .Snake {
@@ -40,6 +56,12 @@
 
 <body>
   <div id="GameBoard"></div>
+  <div id="Settings">
+    <label for="SnakeSpeed">Speed</label>
+    <input type="range" name="SnakeSpeed" id="SnakeSpeed" min="10" max="20" />
+    <label for="SnakeGrowth">Growth</label>
+    <input type="range" name="SnakeGrowth" id="SnakeGrowth" min="1" max="10" />
+  </div>
 </body>
 
 </html>

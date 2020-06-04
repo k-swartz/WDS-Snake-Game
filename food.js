@@ -1,11 +1,11 @@
+import { GridSize, GetExpansionRate } from "./settings.js";
+
+import { GetRandomGridPosition } from "./grid.js";
+
 import {
     OnSnake,
     ExpandSnake
 } from './snake.js'
-
-export const GridSize = 21;
-
-const ExpansionRate = 2;
 
 const GetRandomFoodPosition = () => {
     let NewFoodPosition;
@@ -16,18 +16,11 @@ const GetRandomFoodPosition = () => {
 }
 
 
-const GetRandomGridPosition = () => {
-    return {
-        X: Math.floor(Math.random() * GridSize) + 1,
-        Y: Math.floor(Math.random() * GridSize) + 1
-    }
-}
-
 let Food = GetRandomFoodPosition();
 
 export const Update = () => {
     if (OnSnake(Food)) {
-        ExpandSnake(ExpansionRate);
+        ExpandSnake(GetExpansionRate());
         Food = GetRandomFoodPosition();
     }
 }
